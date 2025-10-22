@@ -48,7 +48,7 @@ namespace Game
 						Console.Clear();
 						break;
 					case ConsoleKey.D:
-						if (PlayerX < fieldWidth - 1) PlayerX++;
+						if (PlayerX < fieldWidth) PlayerX++;
 						Console.Clear();
 						break;
 					case ConsoleKey.Escape:
