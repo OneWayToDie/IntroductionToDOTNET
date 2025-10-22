@@ -13,6 +13,8 @@ namespace Game
 		static int PlayerY = 0;
 		static char[] Player = {'@'};	//сам 'игрок'
 		static bool GameRunning = true;	//Для задачи условия цикла в мэйне
+		static int fieldWidth = 1000;	//Граница полей
+		static int fieldHeight = 1000;
 		static void Main(string[] args)
 		{
 			while (GameRunning)	//Условия работы игры
@@ -34,19 +36,19 @@ namespace Game
 				switch (key.Key)
 				{
 					case ConsoleKey.W:
-						PlayerY--;
+						if (PlayerY >= 1) PlayerY--;
 						Console.Clear();
 						break;
 					case ConsoleKey.S: 
-						PlayerY++;
+						if (PlayerY < fieldHeight)  PlayerY++;
 						Console.Clear();
 						break;
 					case ConsoleKey.A: 
-						PlayerX--;
+						if (PlayerX >= 1) PlayerX--;
 						Console.Clear();
 						break;
 					case ConsoleKey.D:
-						PlayerX++;
+						if (PlayerX < fieldWidth - 1) PlayerX++;
 						Console.Clear();
 						break;
 					case ConsoleKey.Escape:
